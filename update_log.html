@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>更新日志</title>
+		<link rel="stylesheet" href="css/update_log.css"/>
+	</head>
+	<body>
+		<div id="title">WebWindows - Update Notes</div>
+		
+		<div>
+			<h1>v0.1.2 @2018-1-11</h1>
+			<h2>[ADD]</h2>
+			<ul>
+				<li>更改桌面布局为弹性盒布局</li>
+				<li>设置桌面图标的显示方式：
+					<ol>
+						<li>正常时隐藏溢出的文本</li>
+						<li>点击时显示隐藏文本，并显示边框</li>
+						<li>可拖动（以75*100表格为基准）</li>
+					</ol>
+				</li>
+			</ul>
+		</div>
+		<div>
+			<h1>v0.1.1 @2018-1-10</h1>
+			<h2>[ADD]</h2>
+			<ul>
+				<li>添加 jquery-ui 库</li>
+				<li>添加桌面程序图标</li>
+			</ul>
+			<h2 class="debug">[Debug]</h2>
+			<ul>
+				<li>修复问题，向下拖动窗口的操作不会令页面右边出现滚动条</li>
+			</ul>
+		</div>
+		<div>
+			<h1>v0.1.0 @2018-1-6</h1>
+			<h2>[ADD]</h2>
+			<ul>
+				<li>添加 fast_boot 函数，在开机完成前按住 Backspace 键可以一键秒开机！</li>
+			</ul>
+		</div>
+		<div>
+			<h1>v0.0.9 @2018-1-5</h1>
+			<h2>[ADD]</h2>
+			<ul>
+				<li>添加键盘事件响应，开发阶段，屏蔽掉了除 F5、F11、F12 外的所有键盘事件，使之看起来更像windows</li>
+				<li>实现了退出登陆界面，进入主界面(桌面)</li>
+			</ul>
+		</div>
+		<div>
+			<h1>v0.0.8 @2018-1-4</h1>
+			<h2>[ADD]</h2>
+			<ul>
+				<li>实现复杂的“登录”按钮逻辑：<br>
+					<ol>
+						<li>点击按钮，移向按钮外面，按钮不响应点击事件</li>
+						<li>点击外面，移向按钮里面，按钮不响应点击事件</li>
+						<li>点击按钮，移向按钮外面，再移向按钮里面，按钮响应</li>
+						<li>鼠标中键、鼠标右键点击，不响应</li>
+					</ol>
+				</li>
+				<li>
+					整个web均默认不响应鼠标右键事件
+				</li>
+			</ul>
+			<h2 class="debug">[Debug]</h2>
+			<li>修复屏保界面时间更新的另一个小问题</li>
+		</div>
+		<div>
+			<h1>v0.0.7 @2017-12-22</h1>
+			<h2>[ADD]</h2>
+			<ul>
+				<li>登陆界面“登录”按钮</li>
+				<li>登陆界面消失动画</li>
+			</ul>
+			<h2 class="debug">[Debug]</h2>
+			<li>修复 0.0.6版本中 开机界面连续点两下菊花动画，在接下来的屏保界面会出现文字全选的问题</li>
+		</div>
+		<div>
+			<h1>v0.0.6 @2017-12-18</h1>
+			<h2>[ADD]</h2>
+			<ul>
+				<li>登陆界面各个元素定位</li>
+			</ul>
+			<h2 class="bug">[Bug]</h2>
+				<li>开机界面连续点两下菊花动画，在接下来的屏保界面会出现文字全选的问题，暂无法修复</li>
+		</div>
+		<div>
+			<h1>v0.0.5 @2017-12-17</h1>
+			<h2>[ADD]</h2>
+				<li>手动绘制用户头像图片</li>
+			<h2 class="debug">[Debug]</h2>
+				<li>更准确的开机加载完成检测。避免未加载完就退出开机界面</li>
+			<h2>[Change]</h2>
+			<ul>
+				<li>重新定位开机界面各个元素</li>
+				<li>重新定位登入界面各个元素</li>
+			</ul>
+		</div>
+		<div>
+			<h1>v0.0.4 @2017-12-10</h1>
+			<h2>[ADD]</h2>
+			<li>屏保界面上滑消失动画</li>
+		</div>
+		<div>
+			<h1>v0.0.3 @2017-12-8</h1>
+			<h2>[ADD]</h2>
+			<ul>
+				<li>屏保界面进入动画</li>
+				<li>屏保界面</li>
+				<li>屏保界面时间更新</li>
+			</ul>
+			<h2 class="debug">[Debug]</h2>
+			<li>修复时间更新的小bug</li>
+		</div>
+		<div>
+			<h1>v0.0.2 @2017-12-7</h1>
+			<h2>[ADD]</h2>
+			<ul>
+				<li>定时检测加载完成则退出开机界面</li>
+				<li>开机界面淡出动画</li>
+			</ul>
+		</div>
+		<div>
+			<h1>v0.0.1 @2017-12-3</h1>
+			<h2>[ADD]</h2>
+			<ul>
+				<li>开机界面logo</li>
+				<li>开机界面 旋转菊花动画的实现</li>
+			</ul>
+		</div>
+		<br />
+		<h1 style="text-align: center; font-size: 60px; background-color: skyblue;margin: 0px;padding: 0px;border: 0px; width: 100%;height: 100px;">
+			No More.
+		</h1>
+	</body>
+</html>
