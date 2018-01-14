@@ -1,0 +1,49 @@
+#login{
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+#denglu {
+    width: 26%;
+    height: 4.5%;
+    text-align: center;
+    margin-left: 37%;
+    margin-top: 2%;
+    /*outline: 0.2px solid black;*/
+    border: none;
+    background-color: rgba(255,255,255,0.3);
+    box-sizing: border-box;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+#innerdenglu{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0);
+    border: 2px solid rgba(0,0,0,0);
+    outline: none;
+    font-size: 17px;
+    color: white;
+}
+#innerdenglu:hover{
+    border: 2px solid rgba(255,255,255,0.5);
+}
+#please_wait {
+    width: 100%;
+    height: 4%;
+    display: none;
+}
+#wait_loader {
+    display: inline-block;
+    width: 10%;
+    height: 100%;
+    margin: 0px;
+    padding: 1px;
+}
+#wait_loader .circle{
+    width: 100%;
+    height: 100%;
+}

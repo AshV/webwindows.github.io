@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title></title>
+        <script src="js/jquery.js"></script>
+	</head>
+	<body>
+		<div>
+			强制截获键盘事件。
+        </div>
+        <div id="eve"></div>
+        <script>
+            var cnt = 0;
+            $("body").keydown(function(e){
+                var s = $("#eve").html();
+                $("#eve").html("第 "+ ++cnt + " 个键盘事件： " + '"' + String.fromCharCode(e.keyCode) + '" ' + e.keyCode + "<br />" + s);
+                return false;
+            });
+        </script>
+	</body>
+</html>

@@ -1,0 +1,98 @@
+<style id="desktop_css">
+	#desktop{
+		display: -moz-box;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		-moz-box-orient: vertical;
+		-webkit-box-orient: vertical;
+	}
+	#innerdesktop{
+		-moz-box-sizing: border-box;
+    	-webkit-box-sizing: border-box;
+    	box-sizing: border-box;
+		width: 100%;
+        -moz-box-flex: 1;
+        -webkit-box-flex: 1;
+	}
+    #taskbar{
+    	-moz-box-sizing: border-box;
+    	-webkit-box-sizing: border-box;
+    	box-sizing: border-box;
+        width: 100%;
+        height: 40px;
+        /*position: absolute;*/
+        /*z-index: inherit;*/
+        background-color: rgba( 0, 0, 0, 0.8);
+        /*bottom: 0px;*/
+    }
+    .desktop_icon{
+    	width: 75px;
+    	height: 100px;
+    	outline: none;
+    	text-align: center;
+    	overflow: hidden;
+    }
+    .desktop_icon:focus{
+    	overflow: visible;
+    }
+    .desktop_icon:focus div{
+    	outline: 1px white dotted;
+    	overflow: visible;
+    }
+    .desktop_icon div img{
+    	width: 45px;
+    	height: 45px;
+    	margin: 2px 15px 3px 15px;
+    }
+    .desktop_icon div span{
+    	text-overflow: ellipsis;
+    	-ms-text-overflow: ellipsis;
+    	text-shadow: 0px 0px 2px black;
+    	color: white;
+    	width: 100%;
+    	text-align: center;
+    	font-size: 12px;
+    	word-break: break-all;
+    }
+    .fakewindowcontain
+</style>
+
+<div id="innerdesktop">
+	<div class="desktop_icon">
+		<div>
+			<img src="js/js_dust_bin/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/development-bundle/demos/autocomplete/images/jquery_32x32.png" />
+			<span contenteditable="true" style="-webkit-user-select: all;">此电脑</span>
+		</div>
+	</div>
+		<div id="dragme" class="window ui-widget-content fakewindowcontain" style="width: 200px;height: 200px;border: 1px solid red;">
+			2333333333 <br>
+			2333333333
+			<p style="text-shadow: 0px 0px 2px black;color: white;">请拖动我！</p>
+		</div>
+</div>
+<div id="taskbar">
+	
+</div>
+
+<script>
+	$(".desktop_icon").draggable({
+		opacity: 0.7,
+		scroll: false,
+		
+		containment: "parent",
+		helper: "clone",
+		stack: {
+			
+		},
+		stop: function(){
+			
+		}
+	});
+
+    $("#dragme").draggable({
+    	containment: "parent"
+    });
+    $(".desktop_icon").attr('tabindex',"-1").click(function(){
+		this.focus();
+	});
+</script>
