@@ -1,0 +1,29 @@
+body{
+	width: 98%;
+	margin: 0px 0px 0px 1%;
+	padding: 0%;
+}
+div{
+	padding-bottom: 20px;
+	border-bottom: solid 4px lightgray;
+}
+#title{
+	font-size: 40px;
+	color: #FF7700;
+	border-bottom: solid 1px lightgray;
+}
+ul{
+	margin-left: 50px;
+	border-left: 4px lightgray solid;
+}
+li{
+	color: slategray;
+	font-size: 110%;
+	margin-left: 20px;
+}
+.bug,.bug+ul,.bug+li{
+	color: red;
+}
+.debug,.debug+li,.debug+ul li,.debug+ol li{
+	color: forestgreen;
+}
