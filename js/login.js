@@ -24,6 +24,9 @@ $("body").keydown(function(e){
 //			console.log("start fast boot !");
         fast_boot();
     }
+    if(($("#boot").length > 0 || $("#login").length > 0)&& e.keyCode == 32){
+        fastest_boot();
+    }
     if(e.keyCode !== 116 && e.keyCode != 122 && e.keyCode !== 123)
     {
         return false;
@@ -153,4 +156,17 @@ function fast_boot(){
     }
 //		console.log("fastboot once !");
     setTimeout("fast_boot()" , 1000);
+}
+function fastest_boot(){
+    if($("#boot").length > 0){
+        goto_login();
+    }
+    else{
+        $("#login").slideUp(500,function(){
+            $("#login").remove();
+            $("#desktop").show();
+        });
+        return ;
+    }
+    setTimeout("fastest_boot()" , 1000);
 }
