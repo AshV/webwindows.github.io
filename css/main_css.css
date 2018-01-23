@@ -7,14 +7,14 @@ html,body,#desktop{
     overflow: hidden;
 }
 #login{
+	user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	-webkit-user-select: none;
-	user-select: none;
 }
 #desktop{
+	user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	-webkit-user-select: none;
-	user-select: none;
 }

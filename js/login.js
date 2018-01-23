@@ -12,26 +12,33 @@ var tt = new Date();
 var set_update_login = setTimeout("update_login_time()" , 10);
 //	console.log(wait_time + "毫秒后将设置时间。");
 
-$("body").keydown(function(e){
-//		console.log("键盘事件： " + '"' + String.fromCharCode(e.keyCode) + '" ' + e.keyCode);
-    if(!($("#boot").length > 0) && ($("#login_1").length > 0) ){
+$("body").keydown(function (e) {
+    // console.log("键盘事件： " + '"' + String.fromCharCode(e.keyCode) + '" ' + e.keyCode);
+    if (!($("#boot").length > 0) && ($("#login_1").length > 0)) {
         login1_out();
     }
-    else if(!($("#login_1").length > 0) && ($("#denglu").length > 0) && ( (e.keyCode == 32) || (e.keyCode == 13) ) ){
+    else if (!($("#login_1").length > 0) && ($("#denglu").length > 0) && ((e.keyCode == 32) || (e.keyCode == 13))) {
         true_denglu_mouseup();
     }
-    if(($("#boot").length > 0 || $("#login").length > 0)&& e.keyCode == 8){
-//			console.log("start fast boot !");
+    if (($("#boot").length > 0 || $("#login").length > 0) && e.keyCode == 8) {
+        //			console.log("start fast boot !");
         fast_boot();
     }
-    if(($("#boot").length > 0 || $("#login").length > 0)&& e.keyCode == 32){
+    if (($("#boot").length > 0 || $("#login").length > 0) && e.keyCode == 32) {
         fastest_boot();
     }
-    if(e.keyCode !== 116 && e.keyCode != 122 && e.keyCode !== 123)
-    {
+    if (e.keyCode == 117 && $("#login").length <= 0) {//F6 key
+        try{
+            desktop_refresh();
+        }
+        catch(err){};
+        return false;
+    }
+    if (e.keyCode != 116 && e.keyCode != 122 && e.keyCode !== 123) {
         return false;
     }
 });
+
 $("#login").click(function(){
     clearTimeout(set_update_login);
     login1_out();
