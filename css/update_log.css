@@ -21,7 +21,7 @@ li{
 	font-size: 110%;
 	margin-left: 20px;
 }
-.bug,.bug+ul,.bug+li{
+.bug,.bug+ul li,.bug+li{
 	color: red;
 }
 .debug,.debug+li,.debug+ul li,.debug+ol li{

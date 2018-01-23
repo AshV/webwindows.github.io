@@ -1,8 +1,8 @@
 #login{
+	user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     -webkit-user-select: none;
-    user-select: none;
 }
 #denglu {
     width: 26%;
@@ -14,10 +14,10 @@
     border: none;
     background-color: rgba(255,255,255,0.3);
     box-sizing: border-box;
+    user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     -webkit-user-select: none;
-    user-select: none;
 }
 #innerdenglu{
     width: 100%;

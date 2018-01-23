@@ -6,213 +6,92 @@
 		-moz-box-orient: vertical;
 		-webkit-box-orient: vertical;
 	}
+	#desktop *{
+		user-select: none;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
 	#innerdesktop{
 		-moz-box-sizing: border-box;
-    	-webkit-box-sizing: border-box;
-    	box-sizing: border-box;
-		-webkit-column-width: 75px;
-		-moz-column-width: 75px;
-		column-width: 75px;
-		-webkit-column-gap: 0px;
-		-moz-column-gap: 0px;
-		column-gap: 0px;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
 		width: 100%;
-        -moz-box-flex: 1;
-        -webkit-box-flex: 1;
+		-moz-box-flex: 1;
+		-webkit-box-flex: 1;
 	}
-    #taskbar{
-    	-moz-box-sizing: border-box;
-    	-webkit-box-sizing: border-box;
-    	box-sizing: border-box;
-        width: 100%;
-        height: 40px;
-        background-color: rgba( 0, 0, 0, 0.8);
-    }
-    .desktop_icon{
-		-moz-box-sizing: content-box;
-    	-webkit-box-sizing: content-box;
-		box-sizing: content-box;
-		border: 0px;
-		margin: 0px;
-    	width: 75px;
-    	height: 100px;
-    	outline: none;
-    	/* outline: red 0.1px solid; */
-    	text-align: center;
-    	overflow: hidden;
-    }
-    .desktop_icon:focus{
-		width: 75px;
-    	height: 100px;
-    	overflow: visible;
-    }
-    .desktop_icon:focus div{
-    	outline: 1px white dotted;
-    	overflow: visible;
-    }
-    .desktop_icon div img{
-    	width: 45px;
-    	height: 45px;
-    	margin: 2px 15px 3px 15px;
-    }
-    .desktop_icon div span{
-    	text-overflow: ellipsis;
-    	-ms-text-overflow: ellipsis;
-    	text-shadow: 0px 0px 2px black;
-    	color: white;
-    	width: 100%;
-    	text-align: center;
-    	font-size: 12px;
-    	word-break: break-all;
-    }
-    .fakewindowcontain
+	#taskbar{
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		width: 100%;
+		height: 40px;
+		background-color: rgba( 0, 0, 0, 0.8);
+	}
+	/* .fakewindowcontain */
 </style>
-
-<div id="innerdesktop">
-	<div class="desktop_icon">
-		<div>
-			<img src="js/js_dust_bin/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/development-bundle/demos/autocomplete/images/jquery_32x32.png" />
-			<span contenteditable="true">此电脑1ergdfghert7iotrgnszdfbaertietdyjsdfhsrtuj</span>
-		</div>
-	</div>
-	<div class="desktop_icon">
-		<div>
-			<img src="js/js_dust_bin/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/development-bundle/demos/autocomplete/images/jquery_32x32.png" />
-			<span contenteditable="true">此电脑2</span>
-		</div>
-	</div>
-	<div class="desktop_icon">
-		<div>
-			<img src="js/js_dust_bin/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/development-bundle/demos/autocomplete/images/jquery_32x32.png" />
-			<span contenteditable="true" style="-webkit-user-select: all;">此电脑3</span>
-		</div>
-	</div>
-	<div class="desktop_icon">
-		<div>
-			<img src="js/js_dust_bin/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/development-bundle/demos/autocomplete/images/jquery_32x32.png" />
-			<span contenteditable="true" style="-webkit-user-select: all;">此电脑4</span>
-		</div>
-	</div>
-	<div class="desktop_icon">
-		<div>
-			<img src="js/js_dust_bin/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/development-bundle/demos/autocomplete/images/jquery_32x32.png" />
-			<span contenteditable="true" style="-webkit-user-select: all;">此电脑5</span>
-		</div>
-	</div>
-	<div class="desktop_icon">
-		<div>
-			<img src="js/js_dust_bin/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/development-bundle/demos/autocomplete/images/jquery_32x32.png" />
-			<span contenteditable="true" style="-webkit-user-select: all;">此电脑6</span>
-		</div>
-	</div>
-	<div class="desktop_icon">
-		<div>
-			<img src="js/js_dust_bin/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/development-bundle/demos/autocomplete/images/jquery_32x32.png" />
-			<span contenteditable="true" style="-webkit-user-select: all;">此电脑7</span>
-		</div>
-	</div>
-	<div class="desktop_icon">
-		<div>
-			<img src="js/js_dust_bin/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/development-bundle/demos/autocomplete/images/jquery_32x32.png" />
-			<span contenteditable="true" style="-webkit-user-select: all;">此电脑8</span>
-		</div>
-	</div>
-	<div class="desktop_icon">
-		<div>
-			<img src="js/js_dust_bin/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/development-bundle/demos/autocomplete/images/jquery_32x32.png" />
-			<span contenteditable="true" style="-webkit-user-select: all;">此电脑9</span>
-		</div>
-	</div>
-	<div class="desktop_icon">
-		<div>
-			<img src="js/js_dust_bin/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/development-bundle/demos/autocomplete/images/jquery_32x32.png" />
-			<span contenteditable="true" style="-webkit-user-select: all;">此电脑10</span>
-		</div>
-	</div>
-	<div class="desktop_icon">
-		<div>
-			<img src="js/js_dust_bin/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/development-bundle/demos/autocomplete/images/jquery_32x32.png" />
-			<span contenteditable="true" style="-webkit-user-select: all;">此电脑11</span>
-		</div>
-	</div>
-	<div class="desktop_icon">
-		<div>
-			<img src="js/js_dust_bin/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/development-bundle/demos/autocomplete/images/jquery_32x32.png" />
-			<span contenteditable="true" style="-webkit-user-select: all;">此电脑12</span>
-		</div>
-	</div>
-	<div class="desktop_icon">
-		<div>
-			<img src="js/js_dust_bin/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/development-bundle/demos/autocomplete/images/jquery_32x32.png" />
-			<span contenteditable="true" style="-webkit-user-select: all;">此电脑13</span>
-		</div>
-	</div>
-	<div class="desktop_icon">
-		<div>
-			<img src="js/js_dust_bin/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/development-bundle/demos/autocomplete/images/jquery_32x32.png" />
-			<span contenteditable="true" style="-webkit-user-select: all;">此电脑14</span>
-		</div>
-	</div>
-	<div class="desktop_icon">
-		<div>
-			<img src="js/js_dust_bin/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/development-bundle/demos/autocomplete/images/jquery_32x32.png" />
-			<span contenteditable="true" style="-webkit-user-select: all;">此电脑15</span>
-		</div>
-	</div>
-	<div class="desktop_icon">
-		<div>
-			<img src="js/js_dust_bin/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/development-bundle/demos/autocomplete/images/jquery_32x32.png" />
-			<span contenteditable="true" style="-webkit-user-select: all;">此电脑16</span>
-		</div>
-	</div>
-	<div class="desktop_icon">
-		<div>
-			<img src="js/js_dust_bin/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/development-bundle/demos/autocomplete/images/jquery_32x32.png" />
-			<span contenteditable="true" style="-webkit-user-select: all;">此电脑17</span>
-		</div>
-	</div>
-	<div class="desktop_icon">
-		<div>
-			<img src="js/js_dust_bin/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/development-bundle/demos/autocomplete/images/jquery_32x32.png" />
-			<span contenteditable="true" style="-webkit-user-select: all;">此电脑18</span>
-		</div>
-	</div>
-	<div class="desktop_icon">
-		<div>
-			<img src="js/js_dust_bin/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/development-bundle/demos/autocomplete/images/jquery_32x32.png" />
-			<span contenteditable="true" style="-webkit-user-select: all;">此电脑19</span>
-		</div>
-	</div>
-	<div class="desktop_icon">
-		<div>
-			<img src="js/js_dust_bin/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/development-bundle/demos/autocomplete/images/jquery_32x32.png" />
-			<span contenteditable="true" style="-webkit-user-select: all;">此电脑20</span>
-		</div>
-	</div>
-	
-		<!--<div id="dragme" class="window ui-widget-content fakewindowcontain" style="width: 200px;height: 200px;border: 1px solid red;">
-			2333333333 <br>
-			2333333333
-			<p style="text-shadow: 0px 0px 2px black;color: white;">请拖动我！</p>
-		</div>-->
-</div>
+<link rel="stylesheet" href="css/desktop_icon.css" />
+<script src="js/blockDrag.js"></script>
+<div id="innerdesktop"></div>
 <div id="taskbar">
 	
 </div>
 
-<script>
-	$(".desktop_icon").draggable({
-		opacity: 0.7,
-		scroll: false,
-		containment: "parent",
-		grid:[75,100],
-		revert: "valid"
-	}).droppable();
-
-    $("#dragme").draggable({
-    	containment: "parent"
-    });
-    $(".desktop_icon").attr('tabindex',"-1").click(function(){
-		this.focus();
+<script id="desktop_icon_js">
+	var num_of_desktop_icon = 0;
+	function desktop_refresh(){
+		num_of_desktop_icon = 0;
+		var window_width = window.innerWidth;
+		var window_height = window.innerHeight;
+		window_height = window_height - $("#taskbar").height();
+		var desktop_icons_per_lie = Math.floor((window_height) / 100);
+		var desktop_icons_per_hang = Math.floor(window_width / 75);
+		var cnt_of_all_block = "(" + desktop_icons_per_lie + "," + desktop_icons_per_hang + ")";
+		$(".desktop_icon").each(function(){
+			num_of_desktop_icon++;
+			// console.log("num_of_desktop_icon " + num_of_desktop_icon);
+			var the_id = "desktop_icon_" + num_of_desktop_icon;
+			$(this).attr("id" , the_id);
+			var tmp_lie_pos = Math.floor(num_of_desktop_icon / desktop_icons_per_lie) + 1;
+			var tmp_hang_pos = num_of_desktop_icon % desktop_icons_per_lie;
+			if(tmp_hang_pos == 0){
+				tmp_lie_pos--;
+				tmp_hang_pos = desktop_icons_per_lie;
+			}
+			var tmp_icon_pos = "(" + tmp_hang_pos + "," + tmp_lie_pos + ")";
+			// console.log("icon_pos:" + tmp_icon_pos + ".the_end");
+			if($(this).parent().attr("id") != "innerdesktop"){
+				$(this).unwrap();
+			}
+			var temp=new blockDrag({
+				boxNode: "#innerdesktop",
+				dragNode: "#" + the_id,
+				blockW: 75,
+				blockH: 100,
+				block: cnt_of_all_block,
+				startPos: tmp_icon_pos
+			});
+			// $(this).find("span").html("此电脑" + num_of_desktop_icon);
+			// console.log(temp);
+		});
+	}
+	function add_desktop_shortcut(shortcut_name,img_src){
+		var tmp_element = $("<div>");
+		tmp_element.addClass("desktop_icon");
+		tmp_element.append('<div><img/><span></span></div>');
+		tmp_element.find("img").attr({"src":img_src,"draggable":"false"});
+		tmp_element.find("span").html(shortcut_name);
+		tmp_element.attr('tabindex',"-1");
+		tmp_element.bind('click', function () { this.focus(); });
+			// console.log(tmp_element.html() );
+		$("#innerdesktop").append(tmp_element);
+		desktop_refresh();
+	}
+	$.getJSON("setting/desktop_icons.json",function(json){
+		$.each(json.shortcut,function(){
+			add_desktop_shortcut(this.name , this.imgsrc);
+		});
+		desktop_refresh();
 	});
+	$(window).resize(function(){desktop_refresh();});
 </script>
