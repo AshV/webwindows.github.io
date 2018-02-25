@@ -1,15 +1,116 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>更新日志</title>
-		<link rel="stylesheet" href="css/update_log.css"/>
-		<!--	<h2 class="debug">[Debug]</h2>
-				<h2 class="bug">[Bug]</h2>				-->
-	</head>
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>更新日志</title><link rel="stylesheet" href="css/update_log.css"/>
+		<!--样例		<h2 class="debug">[Debug]</h2>
+					<h2 class="bug">[Bug]</h2>				--></head>
 	<body>
 		<div id="title">WebWindows - Update Notes</div>
-
+		
+		<div>
+			<h1>v0.2.1 @2018-2-25</h1>
+			<h2>[ADD]</h2>
+			<ul>
+				<li>新增桌面右键菜单刷新桌面功能。</li>
+				<li>处理任务栏快速启动图标，可以动态加载！</li>
+				<li>桌面右键菜单增加两个图标：（刷新）（以下功能不可用）</li>
+				<li>实现开始菜单的弹出及消失动画</li>
+				<li>使“开始菜单”更好看</li>
+			</ul>
+		</div>
+		<div>
+			<h1>v0.2.0 @2018-2-24</h1>
+			<h2>[ADD]</h2>
+			<ul>
+				<li>更换框架，改善桌面右键菜单显示方式</li>
+			</ul>
+			<h2 class="debug">[Debug]</h2>
+			<ul>
+				<li>解决桌面右键菜单弹出失败的问题</li>
+			</ul>
+			<h2 class="bug">[Bug]</h2>
+			由于时间因素以及个人代码能力有限，未实现以下功能
+				<ul>
+					<li>窗口效果</li>
+					<li>任务栏操作窗口</li>
+					<li>桌面右下角“显示/隐藏桌面”按钮功能</li>
+					<li>计算器</li>
+					<li>画图</li>
+					<li>扫雷游戏</li>
+					<li>录音机</li>
+				</ul>
+			以上功能将会在以后版本逐渐增加并完善。
+		</div>
+		<div>
+			<h1>v0.1.9 @2018-2-23</h1>
+			<h2>[ADD]</h2>
+			<ul>
+				<li>实现右键菜单及右键刷新功能</li>
+				<li>任务栏图标重新排版，使其看起来更像Windows</li>
+			</ul>
+			<h2 class="debug">[Debug]</h2>
+				<ul>
+					<li>修正一个任务栏图标显示问题，使窗口图标与快速启动图标也可以任意调换顺序</li>
+				</ul>
+		</div>
+		<div>
+			<h1>v0.1.8 @2018-2-21</h1>
+			<h2>[ADD]</h2>
+			<ul>
+				<li>实现多个图标一起拖动代码</li>
+			</ul>
+			<h2 class="debug">[Debug]</h2>
+				<ul>
+					<li>解决“不支持多个选中的图标一起拖动”的问题</li>
+				</ul>
+			<h2 class="bug">[Bug]</h2>
+				<ul>
+					<li>多个图标一起拖动到边缘时，由于处理位置不当，仍可能导致重叠</li>
+				</ul>
+		</div>
+		<div>
+			<h1>v0.1.7 @2018-2-20</h1>
+			<h2>[ADD]</h2>
+			<ul>
+				<li>改变拖动选择框的显示方式，黑白两色框框，易于分辨</li>
+				<li>更换框架，重新实现拖动移动图标，及桌面图标的排列</li>
+				<li>重新实现“拖动图标以移动”的代码</li>
+				<li>重新实现“自动位置还原”代码</li>
+				<li>桌面图标选中后背景色变化</li>
+			</ul>
+			<h2 class="debug">[Debug]</h2>
+				<ul>
+					<li>解决“用户拖动桌面图标可能会导致图标重叠”的问题</li>
+					<li>解决小问题，只能在图标内一个div上才能选择图标</li>
+					<li>解决“单击图标不能选择”的问题</li>
+					<li>更改了拖动选择范围，只能在“显示部分上才能拖动桌面图标”</li>
+				</ul>
+			<h2 class="bug">[Bug]</h2>
+				<ul>
+					<li>不支持多个选中的图标一起拖动</li>
+				</ul>
+		</div>
+		<div>
+			<h1>v0.1.6 @2018-2-19</h1>
+			<h2>[ADD]</h2>
+			<ul>
+				<li>桌面图标可以选中，可以拖动选择。</li>
+				<li>增加选中后的图标的样式</li>
+			</ul>
+			<h2 class="bug">[Bug]</h2>
+				<ul>
+					<li>拖动移动图标的功能失效</li>
+					<li>单击图标不能选择</li>
+				</ul>
+		</div>
+		<div>
+			<h1>v0.1.6 @2018-2-18</h1>
+			<h2>[ADD]</h2>
+			<ul>
+				<li>增加任务栏按钮若干</li>
+				<li>任务栏按钮鼠标悬停时改变背景色</li>
+				<li>任务栏Windows徽标键鼠标悬停时改变颜色为蓝色</li>
+				<li>增加支持任务栏“窗口按钮栏”</li>
+				<li>任务栏窗口按钮栏可以拖动排序</li>
+			</ul>
+		</div>
 		<div>
 			<h1>v0.1.5 @2018-1-21</h1>
 			<h2>[ADD]</h2>

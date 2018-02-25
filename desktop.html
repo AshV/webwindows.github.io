@@ -1,97 +1,192 @@
 <style id="desktop_css">
-	#desktop{
-		display: -moz-box;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		-moz-box-orient: vertical;
-		-webkit-box-orient: vertical;
-	}
-	#desktop *{
-		user-select: none;
-		-moz-user-select: none;
-		-webkit-user-select: none;
-		-ms-user-select: none;
-	}
-	#innerdesktop{
-		-moz-box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
-		width: 100%;
+	#program_list{
 		-moz-box-flex: 1;
 		-webkit-box-flex: 1;
+		box-flex: 1;
+		display: box;
+		display: -moz-box;
+		display: -webkit-box;
+		height: 100%;
 	}
-	#taskbar{
+	.program{
+		-moz-box-flex: 1;
+		-webkit-box-flex: 1;
+		height: 100%;
+		display: flex;
+		max-width: 160px;
+		color: white;
+	}
+	.program:hover{
+		background-color: rgba(255,255,255,0.15);
+	}
+	.program > img{
+		width: 25px;
+		height: 25px;
+		float: left;
+		margin: auto 5px auto 10px;
+	}
+	.program > span{
+		margin-top: auto;
+		margin-bottom: auto;
+		font-size: 12px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		padding-right: 10px;
+	}
+	#hide_or_show_the_desktop{
+		box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
-		width: 100%;
-		height: 40px;
-		background-color: rgba( 0, 0, 0, 0.8);
+		height: 100%;
+		width: 8px;
+		background-color: rgba(255,255,255,0.05);
+		border-left: solid 1px rgba(255,255,255,0.2);
 	}
-	/* .fakewindowcontain */
+	#hide_or_show_the_desktop:hover{
+		background-color: rgba(255,255,255,0.4);
+	}
+	.desktop_window{
+		position: absolute;
+		z-index: 3;
+		display: block;
+	}
 </style>
+<link rel="stylesheet" type="text/css" href="css/desktop.css"/>
 <link rel="stylesheet" href="css/desktop_icon.css" />
-<script src="js/blockDrag.js"></script>
-<div id="innerdesktop"></div>
-<div id="taskbar">
+<div id="innerdesktop">
+	<div id="notepad_window" class="desktop_window" style="top: 100px;left: 100px;">
+		<div class="window_title_bar">
+			<img class="window_icon" draggable="false" src="app/images/icons/notepad-16x16.png"/>
+			<span class="window_title">
+				Untitled - Notepad
+			</span>
+			<button class="window_close_button window_button">
+			</button>
+		</div>
+		<div class="window_content">
+			<iframe allowfullscreen="" src="app/notepad/index.html" style="width: 640px; height: 380px; border: 0px; vertical-align: bottom;"> </iframe>
+		</div>
+    </div>
+    
+	<div id="sound_window" class="desktop_window" style=" z-index: 5; left: 276.5px; top: 258px; display: none;">
+		<div class="window_title_bar" >
+			<img  class="window_icon" draggable="false" src="app/images/icons/speaker-16x16.png">
+			<span class="window_title">
+				Sound - Sound Recorder
+			</span>
+			<button class="window_close_button window_button">
+			</button>
+		</div>
+		<div class="window_content">
+			<iframe allowfullscreen="" src="app/sound-recorder/index.html" style="width: 262px; height: 123px; border: 0px; vertical-align: bottom;">
+			</iframe>
+		</div>
+	</div>
+	<div id="paint_window" class="desktop_window" style=" z-index: 8; left: 87.5px; top: 119px; display: none;">
+		<div class="window_title_bar" >
+			<img  class="window_icon" draggable="false" src="app/images/icons/paint-16x16.png">
+			<span class="window_title">
+				untitled - Paint
+			</span>
+			<button class="window_close_button window_button">
+			</button>
+		</div>
+		<div class="window_content">
+			<iframe allowfullscreen="" src="app/jspaint/index.html" style="width: 640px; height: 380px; border: 0px; vertical-align: bottom;">
+			</iframe>
+		</div>
+	</div>
+	<div id="minesweeper_window" class="desktop_window" style=" z-index: 16; left: 267.5px; top: 149px; display: none;">
+		<div class="window_title_bar" >
+			<img  class="window_icon" draggable="false" src="app/images/icons/minesweeper-16x16.png">
+			<span class="window_title">
+				Minesweeper
+			</span>
+			<button class="window_close_button window_button">
+			</button>
+		</div>
+		<div class="window_content">
+			<iframe allowfullscreen="" src="app/embed-minesweeper.html" style="width: 280px; height: 320px; border: 0px; vertical-align: bottom;">
+			</iframe>
+		</div>
+	</div>
+
 	
 </div>
-
-<script id="desktop_icon_js">
-	var num_of_desktop_icon = 0;
-	function desktop_refresh(){
-		num_of_desktop_icon = 0;
-		var window_width = window.innerWidth;
-		var window_height = window.innerHeight;
-		window_height = window_height - $("#taskbar").height();
-		var desktop_icons_per_lie = Math.floor((window_height) / 100);
-		var desktop_icons_per_hang = Math.floor(window_width / 75);
-		var cnt_of_all_block = "(" + desktop_icons_per_lie + "," + desktop_icons_per_hang + ")";
-		$(".desktop_icon").each(function(){
-			num_of_desktop_icon++;
-			// console.log("num_of_desktop_icon " + num_of_desktop_icon);
-			var the_id = "desktop_icon_" + num_of_desktop_icon;
-			$(this).attr("id" , the_id);
-			var tmp_lie_pos = Math.floor(num_of_desktop_icon / desktop_icons_per_lie) + 1;
-			var tmp_hang_pos = num_of_desktop_icon % desktop_icons_per_lie;
-			if(tmp_hang_pos == 0){
-				tmp_lie_pos--;
-				tmp_hang_pos = desktop_icons_per_lie;
-			}
-			var tmp_icon_pos = "(" + tmp_hang_pos + "," + tmp_lie_pos + ")";
-			// console.log("icon_pos:" + tmp_icon_pos + ".the_end");
-			if($(this).parent().attr("id") != "innerdesktop"){
-				$(this).unwrap();
-			}
-			var temp=new blockDrag({
-				boxNode: "#innerdesktop",
-				dragNode: "#" + the_id,
-				blockW: 75,
-				blockH: 100,
-				block: cnt_of_all_block,
-				startPos: tmp_icon_pos
-			});
-			// $(this).find("span").html("此电脑" + num_of_desktop_icon);
-			// console.log(temp);
-		});
-	}
-	function add_desktop_shortcut(shortcut_name,img_src){
-		var tmp_element = $("<div>");
-		tmp_element.addClass("desktop_icon");
-		tmp_element.append('<div><img/><span></span></div>');
-		tmp_element.find("img").attr({"src":img_src,"draggable":"false"});
-		tmp_element.find("span").html(shortcut_name);
-		tmp_element.attr('tabindex',"-1");
-		tmp_element.bind('click', function () { this.focus(); });
-			// console.log(tmp_element.html() );
-		$("#innerdesktop").append(tmp_element);
-		desktop_refresh();
-	}
-	$.getJSON("setting/desktop_icons.json",function(json){
-		$.each(json.shortcut,function(){
-			add_desktop_shortcut(this.name , this.imgsrc);
-		});
-		desktop_refresh();
-	});
-	$(window).resize(function(){desktop_refresh();});
+<div id="taskbar">
+	<div id="start_div" class="taskbaricon"></div>
+	<div id="program_list">
+		<div class="program">
+			<img src="img/icon/chrome.ico"/> <span>webwindows - Google Chrome</span>
+		</div>
+	</div>
+	<div id="notice_div"></div>
+	<div id="hide_or_show_the_desktop"></div>
+</div>
+<script type="text/javascript">
+	$("#program_list").sortable({axis: "x",scroll: false,tolerance: "intersect"}).disableSelection();
 </script>
+<!--<script src="js/jquery-1.8.2.min.js"></script>-->
+<script src="js/jquery.contextMenu.js"></script>
+<script src="js/jquery.ui.position.js"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.contextMenu.css"/>
+<script>
+	$(function(){
+		$.contextMenu({
+			selector: "#desktop", 
+			callback: function(key, options) {
+				var m = "clicked: " + key;
+//				console.log(m); 
+				if(key == "refresh"){
+					desktop_refresh();
+				}
+			},
+			items: {
+				"refresh": {"name": "刷新", "icon": "refresh"},
+				"sep1": "---------",
+				"edit0": {"name": "以下功能不可用", icon: "warning"},
+				"edit1": {"name": "查看"},
+				"edit2": {"name": "排序方式"},
+				"edit3": {"name": "复制"},
+				"edit4": {"name": "粘贴"},
+				"edit5": {"name": "粘贴快捷方式"},
+				"edit6": {"name": "新建"},
+				"edit7": {"name": "显示设置"},
+				"edit8": {"name": "个性化"},
+				"sep2": "---------",
+				"edit": {name: "Edit", icon: "edit"},
+				"cut": {name: "Cut", icon: "cut"},
+				"copy": {name: "Copy", icon: "copy"},
+				"paste": {name: "Paste", icon: "paste"},
+				"delete": {name: "Delete", icon: "delete"},
+				"sep1": "---------",
+				"quit": {name: "Quit", icon: "quit"}
+	        }
+		});
+	});
+	$("#start_div").click(function(){
+		$("#start_menu").remove();
+		var temp_start_menu = $("<div><span style='font-size: 1.5em;'>开始菜单是空的</span></div>");
+		temp_start_menu.attr("id","start_menu");
+		$("#innerdesktop").append(temp_start_menu);
+		temp_start_menu.hide().attr("tabindex","-1");
+		temp_start_menu.css({"width":"350px","height":"550px","position":"absolute","bottom":$("#taskbar").css("height"),"left":"0px","z-index":"2"});
+		temp_start_menu.css({"color":"white","background-color":"rgba(0,0,0,0.85)"});
+		temp_start_menu.css({"border-top":"0.5px solid rgba(255,255,255,0.2)","border-right":"0.5px solid rgba(255,255,255,0.2)","outline":"none"});
+		temp_start_menu.slideDown(200);
+		temp_start_menu.focus();
+		temp_start_menu.blur(function(){
+			temp_start_menu.fadeOut(100,function(){ $(this).remove(); });
+		});
+		var temp_div = $("<div><span style='color: red;display:none;'>0</span></div>");
+		temp_div.css({width:"100%",height:"100%",position:"absolute",top:"0px",left:"0px"});
+		temp_div.click(function(){ $(this).remove(); });
+		$("#desktop").append(temp_div);
+	});
+	$(".desktop_window").draggable({handle:".window_title_bar"});
+</script>
+<script src="js/desktop_icon.js"></script>
+<script src="js/taskbar_icon.js"></script>
+<!--<link href="app/layout.css" rel="stylesheet" type="text/css">-->
+<!--<link href="app/classic.css" rel="stylesheet" type="text/css">-->

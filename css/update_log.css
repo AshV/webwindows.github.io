@@ -1,3 +1,5 @@
+*{	font-family: "微软雅黑" , "microsoft yahei";
+}
 body{
 	width: 98%;
 	margin: 0px 0px 0px 1%;
@@ -21,9 +23,9 @@ li{
 	font-size: 110%;
 	margin-left: 20px;
 }
-.bug,.bug+ul li,.bug+li{
+.bug,.bug+ul > li,.bug+li{
 	color: red;
 }
-.debug,.debug+li,.debug+ul li,.debug+ol li{
+.debug,.debug+li,.debug+ul > li,.debug+ol > li{
 	color: forestgreen;
 }

@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Sound Recorder</title>
+		<link href="../layout.css" rel="stylesheet" type="text/css">
+		<link href="../classic.css" rel="stylesheet" type="text/css">
+		<link rel="icon" href="../images/icons/speaker-16x16.png" sizes="16x16" type="image/png">
+		<link rel="icon" href="../images/icons/speaker-32x32.png" sizes="32x32" type="image/png">
+		<link rel="icon" href="../images/icons/speaker-48x48.png" sizes="48x48" type="image/png">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+	</head>
+	<body>
+		<script src="lib/jquery.min.js"></script>
+		<script src="lib/jquery-ui.js"></script>
+		<script src="../lib/pep.js"></script>
+		<script src="lib/recorder.js"></script>
+		<script src="lib/buffaudio.js"></script>
+		<script src="../src/helpers.js"></script>
+		<script src="../src/$MenuBar.js"></script>
+		<script src="src/setup.js"></script>
+		<script src="src/AudioFile.js"></script>
+		<script src="src/$Button.js"></script>
+		<script src="src/$WaveDisplay.js"></script>
+		<script src="src/app.js"></script>
+		<script src="src/$app.js"></script>
+		<script src="src/effects.js"></script>
+		<script src="src/menus.js"></script>
+		<style>
+			body {
+				background: #008080;
+			}
+			.outside-app-widget {
+				background: #C0C0C0;
+				padding: 5px;
+				margin: 15px;
+				border-radius: 10px;
+				/* box-shadow: 1px 2px red px blue px; */
+				box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+			}
+			.sound-recorder {
+				background: #c0c0c0;
+			}
+			.main {
+				padding: 5px;
+				text-align: center;
+				width: 252px;
+			}
+			.display {
+				display: flex;
+				height: 35px;
+			}
+			.wave {
+				width: 112px;
+				height: 100%;
+				background: black;
+				margin: 0 9px;
+			}
+			.position,
+			.length {
+				width: 58px;
+				height: 100%;
+				text-align: center;
+			}
+			
+			.controls {
+				display: flex;
+			}
+			.controls button {
+				width: 48px;
+				height: 24px;
+				display: flex;
+			}
+			.controls button + button {
+				margin-left: 3px;
+			}
+			
+			/* From jQuery UI */
+			.ui-slider {
+				display: block;
+				position: relative;
+				text-align: left;
+			}
+			.ui-slider-handle {
+				position: absolute;
+				z-index: 2;
+			}
+			/* (NOT from jQuery UI) */
+			/* @TODO: pixel-perfect slider */
+			.slider-container {
+				padding: 10px;
+			}
+			.slider {
+				margin: 5px 0;
+				width: 100%;
+				height: 1px;
+				background: black;
+			}
+			.ui-slider-handle {
+				outline: none;
+			}
+			.ui-slider-horizontal .ui-slider-handle {
+				width: 10px;
+				height: 20px;
+				top: -10px;
+				margin-left: -5px;
+			}
+			.ui-slider-vertical .ui-slider-handle {
+				width: 20px;
+				height: 10px;
+				top: -5px;
+				margin-left: -10px;
+			}
+			
+			/* From .tool-options {} */
+			.inset {
+				border: 1px solid white;
+				border-top-color: #7b7b7b;
+				border-left-color: #7b7b7b;
+			}
+			/* From .menus *, .menu-popup * {} */
+			* {
+				font-family: 'Segoe UI', sans-serif;
+				font-size: 12px;
+				cursor: default;
+			}
+		</style>
+	</body>
+</html>
