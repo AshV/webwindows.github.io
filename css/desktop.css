@@ -1,0 +1,52 @@
+	#desktop{
+		display: -moz-box;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		-moz-box-orient: vertical;
+		-webkit-box-orient: vertical;
+	}
+	#desktop *{
+		user-select: none;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	#innerdesktop{
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		width: 100%;
+		-moz-box-flex: 1;
+		-webkit-box-flex: 1;
+	}
+	#taskbar{
+		display: box;
+		display: -webkit-box;
+		display: -moz-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		width: 100%;
+		height: 40px;
+		background-color: rgba( 0, 0, 0, 0.8);
+	}
+	#program_list > div.taskbaricon , #taskbar > div.taskbaricon{
+		height: 100%;
+		width: 50px;
+		margin: 0px;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	#program_list > div.taskbaricon:hover , #taskbar > div.taskbaricon:hover{
+		background-color: rgba(255,255,255,0.15);
+	}
+	.quick_start_div{
+		background-size: 25px;
+	}
+	#start_div{
+		background-size: 17px;
+		background-image: url(../img/Windows_logo_white.svg);
+	}
+	#start_div:hover{
+		background-image: url(../img/Windows_logo.svg);
+	}

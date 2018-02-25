@@ -2,32 +2,58 @@
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
+    position: absolute;
     border: 0px;
     margin: 0px;
     width: 75px;
     height: 100px;
     outline: none;
-    /* outline: red 0.1px solid; */
     text-align: center;
     overflow: hidden;
 }
-.desktop_icon:focus{
+.desktop_icon.the_focus{
     width: 75px;
     height: 100px;
     overflow: visible;
 }
-.desktop_icon:focus div{
-    outline: 1px white dotted;
+.desktop_icon.the_focus > div{
+    /*outline: 1px white dotted;*/
     overflow: visible;
 }
-.desktop_icon div img{
+.desktop_icon.the_focus > div > span{
+	overflow: visible;
+	display: initial;
+    -webkit-line-clamp: initial;
+    -webkit-box-orient: initial;
+    overflow: hidden;
+}
+.desktop_icon > div:hover{
+	background-color: rgba(255,255,255,0.1);
+}
+div.desktop_icon div.ui-selecting,
+div.desktop_icon div.ui-selecting,
+div.desktop_icon div.ui-selected,
+div.desktop_icon div.ui-selected{
+	background-color: rgba(255,255,255,0.2);
+}
+.ui-selectable-helper {
+	border: 1px dotted white;
+	-webkit-box-shadow: 0 0 0.2px black,inset 0 0 0.2px black;
+	-moz-box-shadow:    0 0 0.2px black,inset 0 0 0.2px black;
+	box-shadow:         0 0 0.2px black,inset 0 0 0.2px black;
+}
+.desktop_icon > div > img{
     width: 40px;
     height: 40px;
     margin: 2px 17.5px 3px 17.5px;
 }
-.desktop_icon div span{
+.desktop_icon > div > span{
     text-overflow: ellipsis;
     -ms-text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     text-shadow: 0px 0px 2px black;
     color: white;
     width: 100%;

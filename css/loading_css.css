@@ -7,7 +7,7 @@ body {
   width: 40px;
   margin: auto;
 }
-.loader .circle {
+.loader > .circle {
   position: absolute;
   width: 38px;
   height: 38px;
@@ -19,7 +19,7 @@ body {
   animation-name: orbit;
   animation-duration: 5.5s;
 }
-.loader .circle:after {
+.loader > .circle:after {
   content: '';
   position: absolute;
   width: 4px;
@@ -31,16 +31,16 @@ body {
   background: #fff;
   /* Pick a color */
 }
-.loader .circle:nth-child(2) {
+.loader > .circle:nth-child(2) {
   animation-delay: 240ms;
 }
-.loader .circle:nth-child(3) {
+.loader > .circle:nth-child(3) {
   animation-delay: 480ms;
 }
-.loader .circle:nth-child(4) {
+.loader > .circle:nth-child(4) {
   animation-delay: 720ms;
 }
-.loader .circle:nth-child(5) {
+.loader > .circle:nth-child(5) {
   animation-delay: 960ms;
 }
 @keyframes orbit {
