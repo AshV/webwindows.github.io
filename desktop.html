@@ -46,80 +46,23 @@
 	#hide_or_show_the_desktop:hover{
 		background-color: rgba(255,255,255,0.4);
 	}
-	.desktop_window{
-		position: absolute;
-		z-index: 3;
-		display: block;
+	.window-titlebar > .icon {
+		vertical-align: bottom;
+	}
+	.window-content {
+		margin: 0;
+		padding: 0;
 	}
 </style>
 <link rel="stylesheet" type="text/css" href="css/desktop.css"/>
 <link rel="stylesheet" href="css/desktop_icon.css" />
-<div id="innerdesktop">
-	<div id="notepad_window" class="desktop_window" style="top: 100px;left: 100px;">
-		<div class="window_title_bar">
-			<img class="window_icon" draggable="false" src="app/images/icons/notepad-16x16.png"/>
-			<span class="window_title">
-				Untitled - Notepad
-			</span>
-			<button class="window_close_button window_button">
-			</button>
-		</div>
-		<div class="window_content">
-			<iframe allowfullscreen="" src="app/notepad/index.html" style="width: 640px; height: 380px; border: 0px; vertical-align: bottom;"> </iframe>
-		</div>
-    </div>
-    
-	<div id="sound_window" class="desktop_window" style=" z-index: 5; left: 276.5px; top: 258px; display: none;">
-		<div class="window_title_bar" >
-			<img  class="window_icon" draggable="false" src="app/images/icons/speaker-16x16.png">
-			<span class="window_title">
-				Sound - Sound Recorder
-			</span>
-			<button class="window_close_button window_button">
-			</button>
-		</div>
-		<div class="window_content">
-			<iframe allowfullscreen="" src="app/sound-recorder/index.html" style="width: 262px; height: 123px; border: 0px; vertical-align: bottom;">
-			</iframe>
-		</div>
-	</div>
-	<div id="paint_window" class="desktop_window" style=" z-index: 8; left: 87.5px; top: 119px; display: none;">
-		<div class="window_title_bar" >
-			<img  class="window_icon" draggable="false" src="app/images/icons/paint-16x16.png">
-			<span class="window_title">
-				untitled - Paint
-			</span>
-			<button class="window_close_button window_button">
-			</button>
-		</div>
-		<div class="window_content">
-			<iframe allowfullscreen="" src="app/jspaint/index.html" style="width: 640px; height: 380px; border: 0px; vertical-align: bottom;">
-			</iframe>
-		</div>
-	</div>
-	<div id="minesweeper_window" class="desktop_window" style=" z-index: 16; left: 267.5px; top: 149px; display: none;">
-		<div class="window_title_bar" >
-			<img  class="window_icon" draggable="false" src="app/images/icons/minesweeper-16x16.png">
-			<span class="window_title">
-				Minesweeper
-			</span>
-			<button class="window_close_button window_button">
-			</button>
-		</div>
-		<div class="window_content">
-			<iframe allowfullscreen="" src="app/embed-minesweeper.html" style="width: 280px; height: 320px; border: 0px; vertical-align: bottom;">
-			</iframe>
-		</div>
-	</div>
-
-	
-</div>
+<div id="innerdesktop"> </div>
 <div id="taskbar">
 	<div id="start_div" class="taskbaricon"></div>
 	<div id="program_list">
-		<div class="program">
+		<!--<div class="program">
 			<img src="img/icon/chrome.ico"/> <span>webwindows - Google Chrome</span>
-		</div>
+		</div>-->
 	</div>
 	<div id="notice_div"></div>
 	<div id="hide_or_show_the_desktop"></div>
@@ -131,19 +74,26 @@
 <script src="js/jquery.contextMenu.js"></script>
 <script src="js/jquery.ui.position.js"></script>
 <link rel="stylesheet" type="text/css" href="css/jquery.contextMenu.css"/>
+<link rel="stylesheet" type="text/css" href="css/desktop_window.css"/>
+<script src="js/desktop_icon.js"></script>
+<script src="js/taskbar_icon.js"></script>
 <script>
 	$(function(){
 		$.contextMenu({
 			selector: "#desktop", 
 			callback: function(key, options) {
 				var m = "clicked: " + key;
-//				console.log(m); 
+				console.log(m); 
 				if(key == "refresh"){
 					desktop_refresh();
+				}
+				else if(key == "quanping"){
+					screenfull.toggle($("body").get(0));
 				}
 			},
 			items: {
 				"refresh": {"name": "刷新", "icon": "refresh"},
+				"quanping": {"name": "切换全屏"},
 				"sep1": "---------",
 				"edit0": {"name": "以下功能不可用", icon: "warning"},
 				"edit1": {"name": "查看"},
@@ -165,6 +115,7 @@
 	        }
 		});
 	});
+	
 	$("#start_div").click(function(){
 		$("#start_menu").remove();
 		var temp_start_menu = $("<div><span style='font-size: 1.5em;'>开始菜单是空的</span></div>");
@@ -184,9 +135,10 @@
 		temp_div.click(function(){ $(this).remove(); });
 		$("#desktop").append(temp_div);
 	});
-	$(".desktop_window").draggable({handle:".window_title_bar"});
+
+//	$(".desktop_icon").dblclick(function(){
+//		var temp_window_id = "#"+$(this).attr("window_name");
+//		$(temp_window_id).show();
+//	});
+//	$(".desktop_window").draggable({scroll: false, handle:".window_title_bar"});
 </script>
-<script src="js/desktop_icon.js"></script>
-<script src="js/taskbar_icon.js"></script>
-<!--<link href="app/layout.css" rel="stylesheet" type="text/css">-->
-<!--<link href="app/classic.css" rel="stylesheet" type="text/css">-->

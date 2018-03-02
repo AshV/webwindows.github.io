@@ -12,3 +12,21 @@
 			add_taskbar_shortcut(this.name , this.imgsrc);
 		});
 	});
+//	$("#hide_or_show_the_desktop").click(function(){
+//		$(".desktop_window").each(function(tmp_ele){
+//			tmp_ele = $(tmp_ele);
+//			if(tmp_ele.css("display") != "none"){
+//				$(".desktop_window").each(function(tmp_ele){
+//					tmp_ele = $(tmp_ele);
+//					tmp_ele.css("display","none");
+//				});
+//				return ;
+//			}
+//			else{
+//				$(".desktop_window").each(function(tmp_ele){
+//					tmp_ele = $(tmp_ele);
+//					tmp_ele.css("display","block");
+//				});
+//			}
+//		});
+//	});
