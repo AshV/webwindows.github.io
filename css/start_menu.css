@@ -1,0 +1,36 @@
+	#start_menu{
+		display: box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-box;
+	}
+	#left_start_menu{
+		width: 40px;
+		border-right: 0.5px rgba(255,255,255,0.7) solid;
+		box-sizing: border-box;
+	}
+	#left_start_menu > #shutdown_button{
+		width: 40px;
+		height: 40px;
+		background-image: url(../img/power.png);
+		background-size: 26px;
+		background-position: center;
+		background-repeat: no-repeat;
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		border: none;
+		outline: none;
+	}
+	#left_start_menu > #shutdown_button:hover{
+		background-color: rgba(255,255,255,0.15);
+	}
+	#middle_start_menu{
+		width: 160px;
+		border-right: 0.5px rgba(255,255,255,0.7) solid;
+		box-sizing: border-box;
+	}
+	#right_start_menu{
+		width: 140px;
+		box-sizing: border-box;
+	}

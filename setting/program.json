@@ -1,0 +1,38 @@
+{
+	"画图" : {
+		"name": "画图",
+		"imgsrc": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAABdUExURQAAAIaGhvj4+GZmZszMzMDAwAAAgHd3d7KysgCAgIAAAKCgpOrq6oAAgE1NTZmZmV9fX+Pj493d3fHx8YCAAP8AANfX1////wAA//8A/wDM////AJaWllVVVf///1tQ7dIAAAAfdFJOU////////////////////////////////////////wDNGXYQAAABGElEQVR42qST22KEIAxEE7mpq91LqW5rt///mU2CIFLlpXkS5piZCMJPWQoVZEv4o90A9gBuyxdrUABotrVoiK7skAjRsMEiw7YjT2iw7JBcROtcZzmwyjKMn6MQPfYEfDGggNwY4lCJ6D8igJL3RQ3XDIFIAG/BjA0IQNZghYiANxRmDmnF23ZPIQKAfqFxZ9vJNCG+EOMYAL+0nvWnzc4iEAL4xWR6OixLRRYA5J/rEcCDygHUDdVwf0zGtJfL9RudeoNDQJu2rQH6DODGTuUVL0EMqQeuaaL36VY4dVsbFMAwaTI4BjhE834n4krEKTA8eM4KQHPwFFgDjKT4DyAWWJnC1IFTC7ee8fa994D8lvtahV8BBgB+WkFImEuatAAAAABJRU5ErkJggg==",
+		"window_name": "paint_window",
+		"window_icon_src": "app/images/icons/paint-16x16.png",
+		"title_name": "untitled - Paint",
+		"app_location": "app/jspaint/index.html",
+		"iframe_style": {"width": "640px", "height": "380px", "border": "0px", "vertical-align": "bottom"}
+	},
+	"扫雷":{
+		"name": "扫雷",
+		"imgsrc": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB70lEQVRYR91XQZKDMAyDl5W+rNOXAR9rF3kQI4yTmOytuXSA2JJsOdBx6FzzPH+XZbHo9/s9dqYZugIB/ng8hnVdB5DYCAC/K1dX0O8TgELU9Pl8XirEZ9qCaZqwt9QGy1VqUQiA5FjoMUl4YBLAPvhASCjY9/P5mEdKPjkRIAgyKAk6nKD+V0mIKQeC75PCNCfM08Xr9bJyQY2SYCQqEoHzOSsh4zlsOam+TQA7SiTugjvVIXjRGCCBKmgbtOfMFilHHNvg1IcjH94EAQTTiHfBSQzGExI5Aqpey+5Ve+NReaUCYcUvrKi+BE6D0axqPIIXKpAnwP6DhC6Csz2cb1wnwMtTQOfvU2AbkdyXlc9JTGeepBjL3gdjqJrGUQ1H00VlJRkkjAiQnBqvAW5EjAAPnqyxVMJ+xB63Wsp9pWDCY+RqxlJ3RxOh9zLKvSH4xrK5bS2vuhccHfBjaERqJNzhcuKaVF5+GaEdzOh7mb1uVO9y7kTHYzeJVutQcr+nSqA2Wi23B2Ry74LvtkZnjWRvWwXIEeBY1pzeQqo8b7bAzoQ7M99Bpj4F23eh/tnoyH8OCdpXJYDoYwr2VHZa3mRCkONcSX0VC0jpW75FpDZVaRNmxXp1iLv9V+92gFZJP0ykXVkBtu8/BLxfunL9Aazd7S1Ll9l3AAAAAElFTkSuQmCC",
+		"window_name": "minesweeper_window",
+		"window_icon_src": "app/images/icons/minesweeper-16x16.png",
+		"title_name": "Minesweeper",
+		"app_location": "app/embed-minesweeper.html",
+		"iframe_style": {"width": "280px", "height": "320px", "border": "0px", "vertical-align": "bottom"}
+	},
+	"录音机":{
+		"name": "录音机",
+		"imgsrc": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABj0lEQVR42sWXAZaDIAxEycmkJ1NPVjkZ67DEYgwKVGnes9gKzu9AIpL5cVDrwPfb+Ner7j7TNPn12PVtAoA40WKstWZZlnDIG0vh2B76VANI8WEYjHNOhTgTbgJgcQQAvPfbtXmeN6ES4WoAFh8Gu4pN4bdxHHd9UojSKOqcihvjDRFt9j8OIMUx3+n8twJwRpx2luLgdW5pBuC1Ec/p1AFNnO1fBwcICaBBaKLqFEAwvWAtn33Ew4AKAK3wqABpegVJbyOAPw6odOAqCOLWshBWN/69zw+IywYQiG9TUQCYFYAuASAO4SiWLUhfOMD206GFAQ8B/It8HCAVIl0Dsf5fluQiABQYpBw7gHzHd9myAyUA1Q5ABBnA+a9BQJgXYPyX9wDUOJCGrIjVAPiQRQiRg5AOyHrQBBBjB7FCqRC8BjRxCVBcCTPhNQh24PZnwRlE6JhsRgDw+NNQg2CQbvuBHAS24912RBqEc1Nou+0JNQi40HVXLCHSaej2XpCD6PpmlELU3ue2d8M74+cAf3910a8QeoQVAAAAAElFTkSuQmCC",
+		"window_name": "sound_window",
+		"window_icon_src": "app/images/icons/speaker-16x16.png",
+		"title_name": "Sound - Sound Recorder",
+		"app_location": "app/sound-recorder/index.html",
+		"iframe_style": {"width": "262px", "height": "122px", "border": "0px", "vertical-align": "bottom"}
+	},
+	"记事本":{
+		"name": "记事本",
+		"imgsrc": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAUVBMVEUAAACGhoYAgID4+Phm//+ZzMyZ///AwMAAAADM///x8fHM7P/q6upmzMymyvDM/8zd3d2Z/8zj4+MzmZnMzMxmzP9m/8wzzMwzzP/X19f///8yWdUJAAAAAXRSTlMAQObYZgAAAAFiS0dEGnVn5DIAAAAHdElNRQfhAwULEiu5r44XAAABUklEQVQ4y5WT27aCMAxEJZByqYkFqR7//0fPpKUW0BeH4svsziQuvVx+UNOcz1HU0ukcEerYuf2hnobhEJA1TuPkPc5Vhr6pBLlst5MRo/de6RMwG5evsG8jAnZA9s22yze8jICwB8ZpKEL8rBawvAFyk7fZsmbdAvaArwHqsaUM97tIAVBQbjtdHApshb5dKpAGm+Hgg9WxTRDeAPybpma7i69RHaUGqYAf0axshzkHrG1JICtNT0ai2gpoqIBXh2iGLSodP2wFa8gVhKVSgOPIHYgYLaBvSwK5tJcKdyAk4qL5oQA2AaslR4ZpPpUG2QCNjzibm/yYAqwhJWCCjlmzkxih0rABSH5s2SLP+Ewr5AarIOYt2N4/eVrAmhu2Ic9KE4QKXIaT7rVBmv3PulnCC1rXF552l7ADlhDCy7D2GwDirP4I4N941tH/nPfsf9M/lngcOlIX3Z0AAAAldEVYdGRhdGU6Y3JlYXRlADIwMTctMDMtMDVUMTE6MTg6NDMtMDU6MDAASpq/AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE3LTAzLTA1VDExOjE4OjQzLTA1OjAwcRciAwAAAABJRU5ErkJggg==",
+		"window_name": "notepad_window",
+		"window_icon_src": "app/images/icons/notepad-16x16.png",
+		"title_name": "Untitled - Notepad",
+		"app_location": "app/notepad/index.html",
+		"iframe_style": {"width": "640px", "height": "380px", "border": "0px", "vertical-align": "bottom"}
+	}
+}

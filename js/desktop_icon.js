@@ -29,8 +29,7 @@
 		});
 		$(".the_focus").removeClass("the_focus");
 	}
-	var used_windows = 0;
-	function add_desktop_shortcut(shortcut_name , img_src, window_name, window_icon_src, title_name, app_location, iframe_style){
+	function add_desktop_shortcut(shortcut_name,img_src){
 		var tmp_element = $("<div>");
 		tmp_element.addClass("desktop_icon");
 		tmp_element.append('<div><img/><span></span></div>');
@@ -81,62 +80,7 @@
 						}
 					})
 					.click(function() {$(this).children().first().addClass("ui-selected");$(".the_focus").removeClass("the_focus");$(this).addClass("the_focus");})
-					.dblclick(function(){
-						console.log("once dblclick");
-						var tmp_string = 
-	'<div class="desktop_window" style="display: none;">' +
-		'<div class="window_title_bar" >' +
-			'<img  class="window_icon" draggable="false" src="app/images/icons/speaker-16x16.png">' +
-			'<span class="window_title"></span>' +
-			'<button class="window_close_button window_button"></button>' +
-		'</div>' +
-		'<div class="window_content">' +
-			'<iframe allowfullscreen=""></iframe>' +
-		'</div>' +
-	'</div>';
-						var tmp_taskbar_string =
-		'<div class="program">' +
-			'<img/> <span></span>' +
-		'</div>';
-						used_windows++;
-						var tmp_element = $(tmp_string);
-						var tmp_taskbar = $(tmp_taskbar_string);
-						tmp_taskbar.children().eq(0).attr("src",img_src);
-						tmp_taskbar.children().eq(1).html(title_name);
-						var tmp_class = window_name + "_" + used_windows;
-						tmp_taskbar.addClass(tmp_class);
-						tmp_taskbar.click(function(){
-							var target_window = $("#" + tmp_class); 
-							if(target_window.css("display") != "none"){
-								if(target_window.attr("id") != $("#innerdesktop").children().last().attr("id") ){
-									console.log("not the last");
-//									target_window.detach();
-									target_window.hide();
-								}
-								else{
-									console.log("is the last child");
-									target_window.hide();
-								}
-							}
-							else{
-								target_window.show();
-							};
-						});
-						$("#program_list").append(tmp_taskbar);
-						
-						tmp_element.attr("id",tmp_class);
-						tmp_element.children().first().children().eq(1).html(title_name);
-						tmp_element.children().first().children().eq(0).attr("src",window_icon_src);
-						tmp_element.children().eq(1).children().first().attr("src",app_location);
-						tmp_element.children().eq(1).children().first().css(iframe_style);
-						tmp_element.children().eq(0).children().eq(2).click(function(){
-							$(this).parent().parent().remove();
-							$("." + tmp_class).eq(0).remove();
-						});
-						$("#innerdesktop").append(tmp_element);
-						tmp_element.draggable({scroll: false, handle:".window_title_bar"});
-						tmp_element.show();
-					})
+					.dblclick(function(){create_window( shortcut_name );})
 					.css("position", "absolute");
 		$("#innerdesktop").append(tmp_element);
 		desktop_refresh();
@@ -162,9 +106,10 @@
 			tmp_jquery_obj.css({left: (((l + 3) / 2) - 1) * 75 + "px"});
 		}
 	}
-	$.getJSON("setting/desktop_icons.json",function(json){
-		$.each(json.shortcut,function(){
-			add_desktop_shortcut(this.name , this.imgsrc, this.window_name, this.window_icon_src, this.title_name, this.app_location, this.iframe_style);
+	$.getJSON("setting/desktop_icons.json",function(tmp_json){
+//		console.log(tmp_json.shortcut[0]);
+		$.each(tmp_json.shortcut,function(){
+			add_desktop_shortcut(this.name , this.imgsrc);
 		});
 		desktop_refresh();
 	});

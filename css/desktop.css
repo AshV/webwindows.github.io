@@ -30,23 +30,16 @@
 		height: 40px;
 		background-color: rgba( 0, 0, 0, 0.8);
 	}
-	#program_list > div.taskbaricon , #taskbar > div.taskbaricon{
-		height: 100%;
-		width: 50px;
-		margin: 0px;
-		background-position: center;
-		background-repeat: no-repeat;
-	}
-	#program_list > div.taskbaricon:hover , #taskbar > div.taskbaricon:hover{
-		background-color: rgba(255,255,255,0.15);
-	}
-	.quick_start_div{
-		background-size: 25px;
-	}
-	#start_div{
-		background-size: 17px;
-		background-image: url(../img/Windows_logo_white.svg);
-	}
-	#start_div:hover{
-		background-image: url(../img/Windows_logo.svg);
+	#start_menu{
+		width: 340px;
+		height: 550px;
+		position: absolute;
+		/*bottom: $(#taskbar).css(height);*/
+		left: 0px;
+		z-index: 10001;
+		color: white;
+		background-color: rgba(0,0,0,0.85);
+		border-top: 0.5px solid rgba(255,255,255,0.2);
+		border-right: 0.5px solid rgba(255,255,255,0.2);
+		outline: none;
 	}

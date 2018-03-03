@@ -1,58 +1,59 @@
-.desktop_window {
-    background: #c0c0c0;
-    border-top: 1px solid #dfdfdf;
-    border-left: 1px solid #dfdfdf;
-    border-right: 1px solid #000;
-    border-bottom: 1px solid #000;
-    padding: 2px;
-	position: absolute;
-	z-index: 3;
-	display: block;
-}
-.window_title_bar {
-    background: #000080;
-    background: -moz-linear-gradient(left, #000080 0%, #1084d0 100%);
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #000080), color-stop(100%, #1084d0));
-    background: -webkit-linear-gradient(left, #000080 0%, #1084d0 100%);
-    background: -o-linear-gradient(left, #000080 0%, #1084d0 100%);
-    background: -ms-linear-gradient(left, #000080 0%, #1084d0 100%);
-    background: linear-gradient(to right, #000080 0%, #1084d0 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000080', endColorstr='#1084d0', GradientType=1 );
-    color: white;
-    font-family: "微软雅黑", "microsoft yahei";
-    font-size: 12px;
-}
-.window_title_bar > .window_icon {
-	vertical-align: bottom;
-}
-.window_content {
-	margin: 0;
-	padding: 0;
-}
-.window_title {
-	display: inline-block !important;
-	margin: 0;
-	padding: 0;
-}
-.window_close_button {
-	display: inline-block !important;
-	float: right;
-	width: 13px;
-	height: 13px;
-	padding: 0px;
-	margin: 2px;
-}
-.window_close_button:before {
-	content: '×';
-	position: relative;
-	top: -3px;
-	right: 0px;
-}
-
-.window-content .button-group {
-	width: 85px;
-}
-.window-content .button-group > button {
-	width: 95%;
-	padding: 3px 5px;
-}
+	.desktop_window {
+	    background: #c0c0c0;
+	    border-top: 1px solid #dfdfdf;
+	    border-left: 1px solid #dfdfdf;
+	    border-right: 1px solid #000;
+	    border-bottom: 1px solid #000;
+	    padding: 2px;
+		position: absolute;
+		z-index: 3;
+		display: block;
+	}
+	.window_title_bar {
+	    background: #000080;
+	    background: -moz-linear-gradient(left, #000080 0%, #1084d0 100%);
+	    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #000080), color-stop(100%, #1084d0));
+	    background: -webkit-linear-gradient(left, #000080 0%, #1084d0 100%);
+	    background: -o-linear-gradient(left, #000080 0%, #1084d0 100%);
+	    background: -ms-linear-gradient(left, #000080 0%, #1084d0 100%);
+	    background: linear-gradient(to right, #000080 0%, #1084d0 100%);
+	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000080', endColorstr='#1084d0', GradientType=1 );
+	    color: white;
+	    font-family: "微软雅黑", "microsoft yahei";
+	    font-size: 12px;
+	    height: 20px;
+	}
+	.window_title_bar > .window_icon {
+		vertical-align: bottom;
+	}
+	.window_content {
+		margin: 0;
+		padding: 0;
+	}
+	.window_title {
+		display: inline-block !important;
+		margin: 0;
+		padding: 0;
+	}
+	.window_close_button {
+		display: inline-block !important;
+		float: right;
+		width: 13px;
+		height: 13px;
+		padding: 0px;
+		margin: 2px;
+	}
+	.window_close_button:before {
+		content: '×';
+		position: relative;
+		top: -3px;
+		right: 0px;
+	}
+	
+	.window-content .button-group {
+		width: 85px;
+	}
+	.window-content .button-group > button {
+		width: 95%;
+		padding: 3px 5px;
+	}
