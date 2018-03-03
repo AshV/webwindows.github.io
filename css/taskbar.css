@@ -1,0 +1,67 @@
+	#start_div{
+		background-size: 17px;
+		background-image: url(../img/Windows_logo_white.svg);
+	}
+	#start_div:hover{
+		background-image: url(../img/Windows_logo.svg);
+	}
+	.quick_start_div{
+		background-size: 25px;
+	}
+	#program_list > div.taskbaricon , #taskbar > div.taskbaricon{
+		height: 100%;
+		width: 50px;
+		margin: 0px;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	#program_list > div.taskbaricon:hover , #taskbar > div.taskbaricon:hover{
+		background-color: rgba(255,255,255,0.15);
+	}
+	#program_list{
+		-moz-box-flex: 1;
+		-webkit-box-flex: 1;
+		box-flex: 1;
+		display: box;
+		display: -moz-box;
+		display: -webkit-box;
+		height: 100%;
+	}
+	.program{
+		-moz-box-flex: 1;
+		-webkit-box-flex: 1;
+		height: 100%;
+		display: flex;
+		max-width: 160px;
+		color: white;
+	}
+	.program:hover{
+		background-color: rgba(255,255,255,0.15);
+	}
+	.program > img{
+		width: 25px;
+		height: 25px;
+		float: left;
+		margin: auto 5px auto 10px;
+	}
+	.program > span{
+		margin-top: auto;
+		margin-bottom: auto;
+		font-size: 12px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		padding-right: 10px;
+	}
+	#hide_or_show_the_desktop{
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		height: 100%;
+		width: 8px;
+		background-color: rgba(255,255,255,0.05);
+		border-left: solid 1px rgba(255,255,255,0.2);
+	}
+	#hide_or_show_the_desktop:hover{
+		background-color: rgba(255,255,255,0.4);
+	}

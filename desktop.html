@@ -1,62 +1,8 @@
-<style id="desktop_css">
-	#program_list{
-		-moz-box-flex: 1;
-		-webkit-box-flex: 1;
-		box-flex: 1;
-		display: box;
-		display: -moz-box;
-		display: -webkit-box;
-		height: 100%;
-	}
-	.program{
-		-moz-box-flex: 1;
-		-webkit-box-flex: 1;
-		height: 100%;
-		display: flex;
-		max-width: 160px;
-		color: white;
-	}
-	.program:hover{
-		background-color: rgba(255,255,255,0.15);
-	}
-	.program > img{
-		width: 25px;
-		height: 25px;
-		float: left;
-		margin: auto 5px auto 10px;
-	}
-	.program > span{
-		margin-top: auto;
-		margin-bottom: auto;
-		font-size: 12px;
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		padding-right: 10px;
-	}
-	#hide_or_show_the_desktop{
-		box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		height: 100%;
-		width: 8px;
-		background-color: rgba(255,255,255,0.05);
-		border-left: solid 1px rgba(255,255,255,0.2);
-	}
-	#hide_or_show_the_desktop:hover{
-		background-color: rgba(255,255,255,0.4);
-	}
-	.window-titlebar > .icon {
-		vertical-align: bottom;
-	}
-	.window-content {
-		margin: 0;
-		padding: 0;
-	}
-</style>
 <link rel="stylesheet" type="text/css" href="css/desktop.css"/>
-<link rel="stylesheet" href="css/desktop_icon.css" />
-<div id="innerdesktop"> </div>
+<link rel="stylesheet" type="text/css" href="css/desktop_icon.css" />
+<link rel="stylesheet" type="text/css" href="css/taskbar.css"/>
+<link rel="stylesheet" type="text/css" href="css/start_menu.css"/>
+<div id="innerdesktop"></div>
 <div id="taskbar">
 	<div id="start_div" class="taskbaricon"></div>
 	<div id="program_list">
@@ -67,23 +13,40 @@
 	<div id="notice_div"></div>
 	<div id="hide_or_show_the_desktop"></div>
 </div>
+<div id="start_menu" tabindex="-1">
+	<!--<span style='font-size: 1.5em;'>开始菜单是空的</span>-->
+	<div id="left_start_menu">
+		<!--<input type="button" id="" value="" />-->
+		<div id="shutdown_button"></div>
+	</div>
+	<div id="middle_start_menu">
+	</div>
+	<div id="right_start_menu">
+	</div>
+</div>
 <script type="text/javascript">
-	$("#program_list").sortable({axis: "x",scroll: false,tolerance: "intersect"}).disableSelection();
+	$("#start_menu").hide();
+	var programs;
+	$.getJSON("setting/program.json",function(tmp_json){
+		programs = tmp_json;
+	});
 </script>
 <!--<script src="js/jquery-1.8.2.min.js"></script>-->
 <script src="js/jquery.contextMenu.js"></script>
 <script src="js/jquery.ui.position.js"></script>
 <link rel="stylesheet" type="text/css" href="css/jquery.contextMenu.css"/>
 <link rel="stylesheet" type="text/css" href="css/desktop_window.css"/>
+<script src="js/window.js"></script>
 <script src="js/desktop_icon.js"></script>
 <script src="js/taskbar_icon.js"></script>
+<script src="js/start_menu_icon.js"></script>
 <script>
 	$(function(){
 		$.contextMenu({
 			selector: "#desktop", 
 			callback: function(key, options) {
 				var m = "clicked: " + key;
-				console.log(m); 
+//				console.log(m); 
 				if(key == "refresh"){
 					desktop_refresh();
 				}
@@ -114,31 +77,18 @@
 				"quit": {name: "Quit", icon: "quit"}
 	        }
 		});
-	});
-	
-	$("#start_div").click(function(){
-		$("#start_menu").remove();
-		var temp_start_menu = $("<div><span style='font-size: 1.5em;'>开始菜单是空的</span></div>");
-		temp_start_menu.attr("id","start_menu");
-		$("#innerdesktop").append(temp_start_menu);
-		temp_start_menu.hide().attr("tabindex","-1");
-		temp_start_menu.css({"width":"350px","height":"550px","position":"absolute","bottom":$("#taskbar").css("height"),"left":"0px","z-index":"2"});
-		temp_start_menu.css({"color":"white","background-color":"rgba(0,0,0,0.85)"});
-		temp_start_menu.css({"border-top":"0.5px solid rgba(255,255,255,0.2)","border-right":"0.5px solid rgba(255,255,255,0.2)","outline":"none"});
-		temp_start_menu.slideDown(200);
-		temp_start_menu.focus();
-		temp_start_menu.blur(function(){
-			temp_start_menu.fadeOut(100,function(){ $(this).remove(); });
+		$.contextMenu({
+			selector: ".program",
+			callback: function(key, options) {
+//				console.log("clicked: " + key); 
+				if(key == "exit_program"){
+					$("#"+$(this).attr("window_id")).remove();
+					$(this).remove();
+				}
+			},
+			items: {
+				"exit_program": {name: "关闭程序", icon: "warning"}
+	        }
 		});
-		var temp_div = $("<div><span style='color: red;display:none;'>0</span></div>");
-		temp_div.css({width:"100%",height:"100%",position:"absolute",top:"0px",left:"0px"});
-		temp_div.click(function(){ $(this).remove(); });
-		$("#desktop").append(temp_div);
 	});
-
-//	$(".desktop_icon").dblclick(function(){
-//		var temp_window_id = "#"+$(this).attr("window_name");
-//		$(temp_window_id).show();
-//	});
-//	$(".desktop_window").draggable({scroll: false, handle:".window_title_bar"});
 </script>
